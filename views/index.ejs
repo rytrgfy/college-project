@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Index</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .header button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        li {
+            margin-bottom: 20px;
+        }
+        
+        img {
+            max-width: 200px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .view-button {
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Items</h1>
+        <button onclick="window.location.href='/create'">CREATE</button>
+    </div>
+    <ul>
+        <% items.forEach(function(item, index) { %>
+            <li>
+                <%= (index + 1) %>. <strong><%= item.name %></strong><br>
+                    <%= item.details %><br>
+                        <% if (item.photo) { %>
+                            <img src="/<%= item.photo %>" alt="Blog Photo"><br>
+                            <% } %>
+                                <button class="view-button" onclick="window.location.href='/blogs/<%= item._id %>'">View Details</button>
+            </li>
+            <% }); %>
+    </ul>
+</body>
+
+</html>
