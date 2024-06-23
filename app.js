@@ -24,7 +24,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // DB Connection
-const dbURI = 'mongodb+srv://rahul8456:mongodb8456@cluster0.ucbomuy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const dbURI = 'Add your database link';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Connected to MongoDB Atlas'))
     .catch(err => console.log(err));
